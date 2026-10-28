@@ -1,0 +1,98 @@
+name: 'Siseli Inverter Bridge'
+description: 'Local bridge for Siseli-compatible inverters with MQTT discovery for Home Assistant.'
+version: "2.9.5"
+slug: 'siseli_bridge'
+url: 'https://github.com/fadmaz/siseli-ha/blob/main/README.md'
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: 'application'
+host_network: true
+privileged:
+  - NET_ADMIN
+  - NET_RAW
+apparmor: false
+
+options:
+  MQTT_HOST: 'core-mosquitto'
+  MQTT_PORT: 1883
+  MQTT_USER: ''
+  MQTT_PASSWORD: ''
+
+  TARGET_HOST: '8.212.18.157'
+  TARGET_PORT: 1883
+  LISTEN_PORT: 18899
+
+  INVERTER_IP: '192.168.1.106'
+  ROUTER_IP: '192.168.1.1'
+  INVERTER_MAC: ''
+  ROUTER_MAC: ''
+  AUTO_INTERCEPT: true
+  ISOLATE_CLOUD: true
+  MODEM_REBOOT_ON_ISOLATE: false
+  MODEM_USER: 'admin'
+  MODEM_PASSWORD: ''
+  MODEM_REBOOT_DELAY_SEC: 2
+
+  MQTT_DISCOVERY_PREFIX: 'homeassistant'
+  DEVICE_ID: 'siseli_inverter_1'
+  DEVICE_NAME: 'Siseli Inverter 1'
+  MODEL_NAME: 'Siseli Inverter 1'
+  MANUFACTURER: 'Siseli Compatible'
+  ENTITY_PREFIX: 'Siseli'
+  INVERTER_COUNT: 1
+  BATTERY_COUNT: 1
+  BATTERY_CAPACITY_PER_BATTERY_AH: 0.0
+  RATED_OUTPUT_POWER_W: 5000
+
+  STATE_TOPIC: 'siseli/siseli_inverter_1/state'
+  AVAILABILITY_TOPIC: 'siseli/siseli_inverter_1/availability'
+  SNIFF_IFACE: ''
+  LOG_VERBOSE: true
+  LOG_LEVEL: 'info'
+  UPDATE_INTERVAL_SEC: 10
+  ENABLE_LIVE_POLLING: false
+  LIVE_POLL_INTERVAL_SEC: 3
+  ENABLE_FIRST_POLL_DELAY: true
+  RPC_FIRST_POLL_DELAY_SEC: 30
+  ENABLE_HTTP_REPORT_PERIOD: false
+  HTTP_REPORT_PERIOD_SEC: 10
+  ENABLE_APP_ACK: true
+  ENABLE_PARAM_CONTROLS: true
+  SISELI_DTU_ID: '410736032810500114'
+  SISELI_PORTAL_USER: ''
+  SISELI_PORTAL_PASSWORD: ''
+  APP_PAYLOAD_NUL_PREFIX: true
+  MQTT_RETAIN: true
+  PUBLISH_ON_EVERY_TELEMETRY: true
+
+schema:
+  MQTT_HOST: str
+  MQTT_PORT: int
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
+
+  TARGET_HOST: str
+  TARGET_PORT: int
+
+  INVERTER_IP: str
+  ROUTER_IP: str
+  ISOLATE_CLOUD: bool
+  MODEM_REBOOT_ON_ISOLATE: bool
+  MODEM_PASSWORD: password
+  MODEM_REBOOT_DELAY_SEC: int(0,)
+
+
+  LOG_LEVEL: list(debug|info|warning|error)
+  UPDATE_INTERVAL_SEC: int(0,)
+  ENABLE_LIVE_POLLING: bool
+  LIVE_POLL_INTERVAL_SEC: int
+  ENABLE_APP_ACK: bool
+  ENABLE_PARAM_CONTROLS: bool
+  SISELI_PORTAL_USER: str?
+  SISELI_DTU_ID: str?
+  SISELI_PORTAL_PASSWORD: password?
