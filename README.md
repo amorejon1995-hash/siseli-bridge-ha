@@ -168,7 +168,9 @@ del inversor y del router, y arranca. Los detalles están en la sección
 ## Credits and license
 
 Original bridge by **yuraantonov11**; generalized fork by **fadmaz** (MIT);
-this extended continuation by **Alfredo Morejon Ortega**. See
+this extended continuation was written by an **AI assistant**, working under
+the direction of the repository's owner, who led the process, made the
+design decisions and validated everything on the real hardware. See
 [`NOTICE`](NOTICE) for the full attribution chain and [`LICENSE`](LICENSE)
 (MIT) for the parts authored in this repository.
 

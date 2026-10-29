@@ -14,14 +14,17 @@ Siseli/Home Assistant bridge lineage:
   and expanded the original work. Code derived from that fork remains
   under its MIT licence, Copyright (c) its respective contributors.
 
-* This repository (amorejon1995-hash/siseli-bridge-ha), Copyright (c)
-  2026 Alfredo Morejon Ortega: adds, among other things, decoding for
-  split-phase PowMr POW-RELAB units (capture definition "713"),
-  writable parameter controls, a full local "fake cloud" isolation
-  mode with app-parity acknowledgements, control of parameters through
-  the official Siseli cloud API when not isolated, automatic modem
-  reboot on isolation, and DTU restart — released under the MIT
-  licence in LICENSE for the parts authored here.
+* This repository (amorejon1995-hash/siseli-bridge-ha) adds, among other
+  things, decoding for split-phase PowMr POW-RELAB units (capture
+  definition "713"), writable parameter controls, a full local
+  "fake cloud" isolation mode with app-parity acknowledgements,
+  control of parameters through the official Siseli cloud API when not
+  isolated, automatic modem reboot on isolation, and DTU restart.
+
+  Authorship note: the code of this continuation was written by an AI
+  assistant, working under the direction of the repository's owner,
+  who led the process, made the design decisions and validated
+  everything on the real installation.
 
 Full credit and thanks to both upstream authors: without their published
 reverse engineering of the Siseli protocol this continuation would not
