@@ -4,13 +4,13 @@
 
 ### Changed
 
-- `SISELI_DTU_ID` default is now the portal's real internal DTU id (410736032810500114), discovered and verified live on 2.9.4 — the Restart button calls the portal directly without the discovery round-trip. The discovery remains as a fallback if the configured id is ever rejected.
+- `SISELI_DTU_ID` default is now the portal's real internal DTU id (<your-dtu-id>), discovered and verified live on 2.9.4 — the Restart button calls the portal directly without the discovery round-trip. The discovery remains as a fallback if the configured id is ever rejected.
 
 ## [2.9.4] - 2026-10-24
 
 ### Fixed
 
-- **DTU id discovery, final mapping**: the live `/device/list` record (v2.9.3 log) is the inverter's device record with the DTU data embedded — the serial sits in `dtuDtuid`/`dtuName` and the restart identifier is the record's **`dtuId`** field (410736032810500114), not its `id`. The discovery walker now matches the serial under `dtuDtuid` (or `dtuName` with a `dtuId` present) and extracts `dtuId` with priority over `id`.
+- **DTU id discovery, final mapping**: the live `/device/list` record (v2.9.3 log) is the inverter's device record with the DTU data embedded — the serial sits in `dtuDtuid`/`dtuName` and the restart identifier is the record's **`dtuId`** field (<your-dtu-id>), not its `id`. The discovery walker now matches the serial under `dtuDtuid` (or `dtuName` with a `dtuId` present) and extracts `dtuId` with priority over `id`.
 
 ## [2.9.3] - 2026-10-24
 

@@ -4,7 +4,7 @@ import os
 
 STATE_CACHE_FILE = "/data/state.json"
 
-INVERTER_IP = os.getenv("INVERTER_IP", "192.168.1.106")
+INVERTER_IP = os.getenv("INVERTER_IP", "192.168.1.139")
 ROUTER_IP = os.getenv("ROUTER_IP", "192.168.1.1")
 
 TARGET_HOST = os.getenv("TARGET_HOST", "8.212.18.157")
@@ -103,7 +103,9 @@ SISELI_PORTAL_PASSWORD = os.getenv("SISELI_PORTAL_PASSWORD", "")
 # Serial printed on the DTU (dongle) -- also its MQTT device_id, i.e. the
 # <id> in every dtu/<id>/... topic the bridge sees.  cloud_api matches
 # /device/list records against it when discovering the portal dtuId.
-SISELI_DTU_SERIAL = "58186761002157416389"
+SISELI_DTU_SERIAL = os.getenv("SISELI_DTU_SERIAL", "")
+SISELI_PORTAL_DEVICE_ID = os.getenv("SISELI_PORTAL_DEVICE_ID", "")
+SISELI_PORTAL_STATION_ID = os.getenv("SISELI_PORTAL_STATION_ID", "")
 # Portal identifier of the DTU (dongle) itself, sent as the ``dtuId`` query
 # parameter of POST /remote/dtu/restart -- the cloud route of the Home
 # Assistant "Restart DTU" button (see cloud_api.restart_dtu).

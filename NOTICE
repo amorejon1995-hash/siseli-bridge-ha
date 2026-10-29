@@ -1,0 +1,28 @@
+NOTICE — lineage and attribution
+
+This project is an independent, heavily extended continuation of the
+Siseli/Home Assistant bridge lineage:
+
+* Original project: yuraantonov11/siseli-ha
+  (https://github.com/yuraantonov11/siseli-ha) — the first published
+  ARP-interception bridge for PowMr/Siseli inverters. That repository
+  carries no licence of its own; this MIT grant therefore cannot extend
+  to the upstream code, exactly as noted by the intermediate fork.
+
+* Intermediate fork: fadmaz/siseli-ha
+  (https://github.com/fadmaz/siseli-ha), MIT-licensed, which generalized
+  and expanded the original work. Code derived from that fork remains
+  under its MIT licence, Copyright (c) its respective contributors.
+
+* This repository (amorejon1995-hash/siseli-bridge-ha), Copyright (c)
+  2026 Alfredo Morejon Ortega: adds, among other things, decoding for
+  split-phase PowMr POW-RELAB units (capture definition "713"),
+  writable parameter controls, a full local "fake cloud" isolation
+  mode with app-parity acknowledgements, control of parameters through
+  the official Siseli cloud API when not isolated, automatic modem
+  reboot on isolation, and DTU restart — released under the MIT
+  licence in LICENSE for the parts authored here.
+
+Full credit and thanks to both upstream authors: without their published
+reverse engineering of the Siseli protocol this continuation would not
+exist.

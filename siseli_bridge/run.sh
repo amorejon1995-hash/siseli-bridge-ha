@@ -11,7 +11,7 @@ VERSION="${VERSION:-2.5.37}"
 echo "--- Siseli Inverter Bridge ${VERSION} ---"
 export SISELI_BRIDGE_VERSION="${VERSION}"
 
-# ===== Opciones congeladas (2026-10-23, decision de Alfredo) =====
+# ===== Opciones congeladas (2026-10-23) =====
 # Fuera del panel de ajustes: sus valores van fijos en este archivo
 # (marcados FROZEN) y NO se leen de la configuracion del add-on.
 # El codigo Python no cambia: sigue leyendolas como variables de entorno.
@@ -58,7 +58,10 @@ export HTTP_REPORT_PERIOD_SEC="10"  # FROZEN 2026-10-23
 export ENABLE_APP_ACK="$(bashio::config 'ENABLE_APP_ACK' 'true')"
 export ENABLE_PARAM_CONTROLS="$(bashio::config 'ENABLE_PARAM_CONTROLS' 'true')"
 export SISELI_PORTAL_USER="$(bashio::config 'SISELI_PORTAL_USER' '')"
-export SISELI_DTU_ID="$(bashio::config 'SISELI_DTU_ID' '410736032810500114')"
+export SISELI_DTU_ID="$(bashio::config 'SISELI_DTU_ID' '')"
+export SISELI_DTU_SERIAL="$(bashio::config 'SISELI_DTU_SERIAL' '')"
+export SISELI_PORTAL_DEVICE_ID="$(bashio::config 'SISELI_PORTAL_DEVICE_ID' '')"
+export SISELI_PORTAL_STATION_ID="$(bashio::config 'SISELI_PORTAL_STATION_ID' '')"
 export SISELI_PORTAL_PASSWORD="$(bashio::config 'SISELI_PORTAL_PASSWORD' '')"
 export APP_PAYLOAD_NUL_PREFIX="true"  # FROZEN 2026-10-23
 export MQTT_RETAIN="true"  # FROZEN 2026-10-23

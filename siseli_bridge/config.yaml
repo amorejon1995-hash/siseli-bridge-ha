@@ -2,7 +2,7 @@ name: 'Siseli Inverter Bridge'
 description: 'Local bridge for Siseli-compatible inverters with MQTT discovery for Home Assistant.'
 version: "2.9.5"
 slug: 'siseli_bridge'
-url: 'https://github.com/fadmaz/siseli-ha/blob/main/README.md'
+url: 'https://github.com/amorejon1995-hash/siseli-bridge-ha'
 init: false
 arch:
   - aarch64
@@ -27,7 +27,7 @@ options:
   TARGET_PORT: 1883
   LISTEN_PORT: 18899
 
-  INVERTER_IP: '192.168.1.106'
+  INVERTER_IP: '192.168.1.139'
   ROUTER_IP: '192.168.1.1'
   INVERTER_MAC: ''
   ROUTER_MAC: ''
@@ -63,8 +63,11 @@ options:
   HTTP_REPORT_PERIOD_SEC: 10
   ENABLE_APP_ACK: true
   ENABLE_PARAM_CONTROLS: true
-  SISELI_DTU_ID: '410736032810500114'
+  SISELI_DTU_ID: ''
   SISELI_PORTAL_USER: ''
+  SISELI_DTU_SERIAL: ''
+  SISELI_PORTAL_DEVICE_ID: ''
+  SISELI_PORTAL_STATION_ID: ''
   SISELI_PORTAL_PASSWORD: ''
   APP_PAYLOAD_NUL_PREFIX: true
   MQTT_RETAIN: true
@@ -95,4 +98,7 @@ schema:
   ENABLE_PARAM_CONTROLS: bool
   SISELI_PORTAL_USER: str?
   SISELI_DTU_ID: str?
+  SISELI_DTU_SERIAL: str?
+  SISELI_PORTAL_DEVICE_ID: str?
+  SISELI_PORTAL_STATION_ID: str?
   SISELI_PORTAL_PASSWORD: password?

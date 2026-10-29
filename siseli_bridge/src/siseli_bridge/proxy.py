@@ -132,7 +132,7 @@ _BUILTIN_INV_HB_RPC = {"c": 5, "i": 503, "b": {"ci": "Q01TRwZJTlYtSEI=", "no": 0
 
 
 # Genuine DTU-restart downlink captured from the real cloud on 2026-10-24
-# (Alfredo pressed the portal's Restart button at 09:15:11 EDT): a
+# (the portal's Restart button was pressed at 09:15:11 EDT): a
 # body-less envelope {"c":26,"t":...,"s":...,"i":2603} published on the
 # service/dtu_rpc topic (NOT dev_rpc), after which the dongle sent an MQTT
 # DISCONNECT and rebooted.  i=2603 is replayed verbatim from the capture,

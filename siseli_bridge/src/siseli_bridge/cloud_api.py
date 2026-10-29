@@ -44,12 +44,13 @@ from . import config
 from .loggers import log
 
 API_BASE = "https://solar.siseli.com/apis"
-# Portal device id of the 'Inverter' in Alfredo's 'Inverter Plant'
-# (distinct from the DTU serial 58186761002157416389).
-PORTAL_DEVICE_ID = "484921707297996801"
-# Portal id of the station ('Inverter Plant') that owns the devices; used
-# only as the first filter tried by the /device/list discovery below.
-PORTAL_STATION_ID = "484921707272830977"
+# Portal device id of the inverter in the owner's Siseli station, and the
+# id of that station. Both are installation-specific: set them through the
+# SISELI_PORTAL_DEVICE_ID / SISELI_PORTAL_STATION_ID add-on options. The
+# station id is used only as the first filter tried by the /device/list
+# discovery below.
+PORTAL_DEVICE_ID = getattr(config, "SISELI_PORTAL_DEVICE_ID", "")
+PORTAL_STATION_ID = getattr(config, "SISELI_PORTAL_STATION_ID", "")
 # Portal code for "illegal argument".  The restart endpoint answers it
 # when the dtuId is not one it recognizes (observed live on 2026-10-24
 # with the DTU serial).  It is not an authentication failure, so a fresh
@@ -574,7 +575,7 @@ def _find_dtu_id(data: object, serial: str) -> Optional[str]:
     A candidate is any record matching the DTU serial the bridge
     already knows (see :func:`_record_matches_serial`).  The id to use
     is that record's own ``dtuId`` field when it carries one -- the
-    live v2.9.3 record held ``dtuId`` 410736032810500114 while its
+    live v2.9.3 record held ``dtuId`` <your-dtu-id> while its
     ``id`` was the *inverter's* id, so ``dtuId`` takes priority; the
     numeric ``id`` is the fallback, as before.  A value equal to the
     serial itself is skipped -- that is exactly what the portal
